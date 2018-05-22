@@ -1,0 +1,53 @@
+{
+  "name": "next-webgl",
+  "version": "1.0.0",
+  "description": "Example Next.js + WebGL app",
+  "main": "next start",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "deploy": "next build && next export && ./scripts/deploy"
+  },
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5",
+    "yarn": ">=1.5"
+  },
+  "keywords": [
+    "next.js",
+    "react",
+    "webgl"
+  ],
+  "contributors": [
+    {
+      "name": "Ivan Aksamentov",
+      "email": "ivan.aksamentov@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@zeit/next-sass": "^0.2.0",
+    "babel-eslint": "^8.2.3",
+    "bootstrap": "^4.1.1",
+    "eslint": "^5.0.0-alpha.3",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-react": "^7.8.2",
+    "lodash": "^4.17.10",
+    "next": "^6.0.3",
+    "next-progressbar": "^1.0.0",
+    "node-sass": "^4.9.0",
+    "npm-check-updates": "^2.14.2",
+    "prop-types": "^15.6.1",
+    "rc-drawer": "^0.4.11",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-no-ssr": "^1.1.0",
+    "react-resize-detector": "^2.3.0",
+    "reactstrap": "^6.0.1",
+    "three": "^0.92.0"
+  }
+}
