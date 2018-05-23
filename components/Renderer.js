@@ -90,8 +90,6 @@ class Renderer extends React.Component {
           onResize={this.handleResize}
           handleWidth={true}
           handleHeight={true}
-          refreshMode='throttle'
-          refreshRate={100}
         />
 
         {/*language=CSS*/}
