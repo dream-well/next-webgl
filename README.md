@@ -56,6 +56,8 @@ Open `http://localhost:3000` in your browser. You should see a spinning cube.
 
 ## Hacking
 
+### Basic rendering
+
 Open file `components/Scene.js` and find function `renderScene()`.
 
 From here you can choose between (and mix!) two approaches:
@@ -91,6 +93,23 @@ From here you can choose between (and mix!) two approaches:
     ```
 
     Save the file. Now background is deep red. Again, no reloading is required.
+
+
+### Controling rendering with user interface elements
+
+`Scene` component contains local state (see constructor). You can read from the state like this:
+
+```foo = this.state.foo``` 
+
+or set state like this:
+
+```this.setState({foo: newFoo})```
+
+(you can set a part of the object, it will complement the missing fields from the old state. More info [here](https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class)).
+
+Now we have `this.state.rotationDirection` variable that is either a positive or a negative nuber. It affects rotation direction around Y axis. The `this.state.rotationDirection` is being toggled in `handleDirectionButtonClick()` handler every time the button in the sidebar is being pressed.
+
+Exercise: add another button, a corresponding state variable and a handler, that indepently toggles the rotation direction around X axis.
 
 
 ## Production
