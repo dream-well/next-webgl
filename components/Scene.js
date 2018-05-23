@@ -2,7 +2,12 @@ import React from 'react'
 
 import * as THREE from 'three'
 import Renderer from './Renderer'
-import { Button } from 'reactstrap'
+
+import { Button, Form, InputGroup, Label } from 'reactstrap'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import faForward from '@fortawesome/fontawesome-free-solid/faForward'
+import faBackward from '@fortawesome/fontawesome-free-solid/faBackward'
 
 
 /**
@@ -21,6 +26,11 @@ import { Button } from 'reactstrap'
 class Scene extends React.Component {
   constructor(props, context) {
     super(props, context)
+
+    // Some local state for this component
+    this.state = {
+      rotationDirection: +1, // shows which direction cube spins
+    }
   }
 
   onResize = (renderer, gl, { width, height }) => {
@@ -64,19 +74,38 @@ class Scene extends React.Component {
     // This function is called when browser is ready to repaint the canvas.
     // Draw your single frame here.
 
-    this.cube.rotation.y += 0.01
+    this.cube.rotation.y += 0.01 * this.state.rotationDirection
 
     renderer.render(this.scene, this.camera)
+  }
+
+  handleDirectionButtonClick = () => {
+    // Flip rotation direction sign
+    this.setState({
+      rotationDirection: this.state.rotationDirection * -1,
+    })
   }
 
   render = () => {
     return (
       <div className='container-fluid'>
         <div className='row'>
+
+          {/* Column with Sidebar */}
           <div className='col-3'>
+            <Form>
+              <Button id='btn-dir' onClick={this.handleDirectionButtonClick}>
+                {/* Toggle icon depending on current direction */}
+                <FontAwesomeIcon icon={
+                  this.state.rotationDirection > 0
+                    ? faForward
+                    : faBackward
+                }/>
+              </Button>
+            </Form>
           </div>
 
-
+          {/* Column with Renderer */}
           <div className='col-9'>
             <div className="row">
               <Renderer
