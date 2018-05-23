@@ -106,7 +106,7 @@ directory to `gh-pages` branch of yout Github repository or just copy it into we
 ## TODO
 
  - Implement state management via Redux
- - Add some interactivity via Redux components
+ - Add some interactivity via React components
  - Add text overlay (FPS etc.)
  - Add mouse and keyboard controls
  - Add WebASM modules
