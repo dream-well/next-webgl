@@ -63,8 +63,8 @@ class Scene extends React.Component {
     // This function is called when browser is ready to repaint the canvas.
     // Draw your single frame here.
 
-    this.cube.rotation.x += 0.01
     this.cube.rotation.y += 0.01
+
     renderer.render(this.scene, this.camera)
   }
 
