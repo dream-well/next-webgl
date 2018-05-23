@@ -78,7 +78,7 @@ From here you can choose between (and mix!) two approaches:
 
 
  - using `gl`, a [WebGLRenderingContext of the underlying canvas element](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext)
- for raw Gl functionality (buffers, shaders and uniforms). 
+ for raw GL functionality (buffers, shaders and uniforms). 
 
     Example: 
     
