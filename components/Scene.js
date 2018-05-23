@@ -2,6 +2,7 @@ import React from 'react'
 
 import * as THREE from 'three'
 import Renderer from './Renderer'
+import { Button } from 'reactstrap'
 
 
 /**
@@ -70,11 +71,36 @@ class Scene extends React.Component {
 
   render = () => {
     return (
-      <Renderer
-        onResize={this.onResize}
-        initScene={this.initScene}
-        renderScene={this.renderScene}
-      />
+      <div className='container-fluid'>
+        <div className='row'>
+          <div className='col-3'>
+          </div>
+
+
+          <div className='col-9'>
+            <div className="row">
+              <Renderer
+                onResize={this.onResize}
+                initScene={this.initScene}
+                renderScene={this.renderScene}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/*language=CSS*/}
+        <style jsx>{`
+          .container-fluid {
+            width: 100vw;
+            height: 100vh;
+          }
+
+          .row {
+            height: 100vh;
+          }
+
+        `}</style>
+      </div>
     )
   }
 }
